@@ -78,7 +78,7 @@ async function getGooglePaymentDataRequest() {
 function getGooglePaymentsClient() {
   if (paymentsClient === null) {
     paymentsClient = new google.payments.api.PaymentsClient({
-      environment: 'TEST',
+      environment: 'PRODUCTION',
       paymentDataCallbacks: {
         onPaymentAuthorized: onPaymentAuthorized
       }
