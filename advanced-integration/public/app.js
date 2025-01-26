@@ -137,18 +137,18 @@ function getGoogleTransactionInfo(countryCode) {
     displayItems: [{
         label: "Subtotal",
         type: "SUBTOTAL",
-        price: "0.09",
+        price: "400",
       },
       {
         label: "Tax",
         type: "TAX",
-        price: "0.01",
+        price: "10",
       }
     ],
     countryCode: countryCode,
     currencyCode: "USD",
     totalPriceStatus: "FINAL",
-    totalPrice: "0.10",
+    totalPrice: "410",
     totalPriceLabel: "Total"
   };
 }

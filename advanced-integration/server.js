@@ -1,6 +1,20 @@
 import "dotenv/config";
 import express from "express";
 import * as paypal from "./paypal-api.js";
+
+// Log the environment variables (with some masking for sensitive info)
+console.log("Environment Variables Loaded:", {
+  NODE_ENV: process.env.NODE_ENV,
+  PORT: process.env.PORT,
+  PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID,
+  PAYPAL_MERCHANT_ID: process.env.PAYPAL_MERCHANT_ID,
+  // Mask the secret to avoid exposing it in logs:
+  PAYPAL_CLIENT_SECRET: process.env.PAYPAL_CLIENT_SECRET
+    ? process.env.PAYPAL_CLIENT_SECRET.slice(0, 6) + "********"
+    : undefined,
+  BASE_URL: process.env.BASE_URL
+});
+
 const {PORT = 8888} = process.env;
 
 const app = express();
